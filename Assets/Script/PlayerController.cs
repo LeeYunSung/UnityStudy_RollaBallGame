@@ -2,10 +2,13 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public Joystick joystick;
     public float speed;
+
     private int count;
 
     public Text countText;
@@ -15,81 +18,92 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public TimeBar timeBar;
-    float waitTime = 20;
-    float time = 0;
-    float weight = 0;
-    
+    const float MAXTIME = 60;
+    float leftTime;
+
     PickUpGenerator pickUpGenerator;
     public GameObject player;
 
     public bool isStart;
 
+    [SerializeField]
+    GameObject restartView;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 10;
-        time = waitTime;
+        speed = 0.1f;
+        leftTime = MAXTIME;
         winText.text = "";
-        timeText.text = "Time: "+ waitTime +" sec";
+        timeText.text = "Time: " + leftTime + " sec";
         SetCountText();
-
         pickUpGenerator = FindObjectOfType<PickUpGenerator>();
-        //manaBar = GetComponent<ManaBar>(); //요롷게 하면 자기한테 있는 ManaBar를 찾기 때문에 ManaBar를 못찾는 것!
-                                            //manaBar = manaBar.GetComponent<ManaBar>(); 이렇게 해도 계속 같은거 들고 무한 루프 도는 것 밖에 안됨!
-        //https://dodnet.tistory.com/2927
-
+        restartView.SetActive(false);
         StartCoroutine(MovePlayer());
         StartCoroutine(Timer());
     }
-
-    //Timer Coroutine 동작
     IEnumerator Timer()
     {
-        while (time >= 0)
+        while (true)
         {
-            yield return new WaitForSeconds(0.01f);
-            time -= 0.01f;
-            timeText.text = "Time: " + (int)time + " sec";
-            timeBar.barUpdate(waitTime, weight);
-            weight = 0;
+            timeBar.barUpdate(MAXTIME, leftTime);
+            if (leftTime < 0)
+            {
+                leftTime = 0;
+                timeText.text = "Time: 0 sec";
+                isStart = false;
+                break;
+            }
+            else if (leftTime >= MAXTIME)
+            {
+                leftTime = MAXTIME;
+            }
+            timeText.text = "Time: " + (int)leftTime + " sec";
+            yield return new WaitForSeconds(Time.deltaTime);
+            leftTime -= Time.deltaTime;
         }
-        Time.timeScale = 0;
     }
-
-    //플레이어 움직임
     IEnumerator MovePlayer()
     {
         isStart = true;
         while (isStart)
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            float moveHorizontal = joystick.moveHorizontal;
+            float moveVertical = joystick.moveVertical;
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            rb.AddForce(movement * speed);
+            rb.velocity = movement * speed;
             yield return null;
         }
+        Time.timeScale = 0;
+        restartView.SetActive(true);
     }
-
-    //블럭이랑 닿으면 사라짐
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PickUp>() != null)
         {
-            other.gameObject.SetActive(false);
             count += other.gameObject.GetComponent<PickUp>().score;
-            weight = other.gameObject.GetComponent<PickUp>().time;
-            waitTime -= weight;
-            SetCountText();
-            pickUpGenerator.Clone();
         }
+        if (other.GetComponent<TimePickUp>() != null)
+        {
+            leftTime -= other.gameObject.GetComponent<TimePickUp>().time;
+        }
+        other.gameObject.SetActive(false);
+        SetCountText();
+        pickUpGenerator.Clone();
     }
-    //점수 & You Win 출력
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 12)
+        if (count >= 15)
         {
             winText.text = "You Win!";
         }
     }
+
+    public void OnClickRestart() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+    }
+
+
 }

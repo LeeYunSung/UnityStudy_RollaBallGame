@@ -105,5 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  time: 5
+  time: 10
   mMaterial: {fileID: 2100000, guid: 5f21215749db043c1b6a340c3bfc159e, type: 2}

@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlackPickUp : PickUp
+public class BlackPickUp : TimePickUp
 {
 }

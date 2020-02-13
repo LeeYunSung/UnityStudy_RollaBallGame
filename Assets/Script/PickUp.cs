@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PickUp : MonoBehaviour
 {
     public int score;
-    public float time;
     public Material mMaterial;
 
     protected void Update()

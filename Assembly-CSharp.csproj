@@ -65,17 +65,18 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Script\Joystick.cs" />
-    <Compile Include="Assets\Script\PickUp.cs" />
     <Compile Include="Assets\Script\PickUpGenerator.cs" />
     <Compile Include="Assets\Script\PickUpItem\BlackPickUp.cs" />
     <Compile Include="Assets\Script\PickUpItem\BluePickUp.cs" />
     <Compile Include="Assets\Script\PickUpItem\GreenPickUp.cs" />
+    <Compile Include="Assets\Script\PickUpItem\PickUp.cs" />
     <Compile Include="Assets\Script\PickUpItem\RedPickUp.cs" />
+    <Compile Include="Assets\Script\PickUpItem\ScorePickUp.cs" />
+    <Compile Include="Assets\Script\PickUpItem\TimePickUp.cs" />
     <Compile Include="Assets\Script\PickUpItem\WhitePickUp.cs" />
     <Compile Include="Assets\Script\PickUpItem\YellowPickUp.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\TimeBar.cs" />
-    <Compile Include="Assets\Script\TimePickUp.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/yoon/Desktop/UnityTutorial/Rollaball/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

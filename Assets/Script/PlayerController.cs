@@ -8,18 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public Joystick joystick;
     public float speed;
+    public int score;
 
-    private int count;
-
-    public Text countText;
-    public Text winText;
-    public Text timeText;
+    public Text totalScoreText;
 
     private Rigidbody rb;
 
     public TimeBar timeBar;
-    const float MAXTIME = 60;
-    float leftTime;
 
     PickUpGenerator pickUpGenerator;
     public GameObject player;
@@ -33,36 +28,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         speed = 0.1f;
-        leftTime = MAXTIME;
-        winText.text = "";
-        timeText.text = "Time: " + leftTime + " sec";
         SetCountText();
         pickUpGenerator = FindObjectOfType<PickUpGenerator>();
         restartView.SetActive(false);
         StartCoroutine(MovePlayer());
-        StartCoroutine(Timer());
     }
-    IEnumerator Timer()
-    {
-        while (true)
-        {
-            timeBar.barUpdate(MAXTIME, leftTime);
-            if (leftTime < 0)
-            {
-                leftTime = 0;
-                timeText.text = "Time: 0 sec";
-                isStart = false;
-                break;
-            }
-            else if (leftTime >= MAXTIME)
-            {
-                leftTime = MAXTIME;
-            }
-            timeText.text = "Time: " + (int)leftTime + " sec";
-            yield return new WaitForSeconds(Time.deltaTime);
-            leftTime -= Time.deltaTime;
-        }
-    }
+
     IEnumerator MovePlayer()
     {
         isStart = true;
@@ -77,33 +48,25 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0;
         restartView.SetActive(true);
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PickUp>() != null)
         {
-            count += other.gameObject.GetComponent<PickUp>().score;
+            //닿은 객체의 score, time 변수에 따라 값 변경하라고 일러주기. 
+            Destroy(other.gameObject);
+            pickUpGenerator.Clone();
+            SetCountText();
         }
-        if (other.GetComponent<TimePickUp>() != null)
-        {
-            leftTime -= other.gameObject.GetComponent<TimePickUp>().time;
-        }
-        other.gameObject.SetActive(false);
-        SetCountText();
-        pickUpGenerator.Clone();
     }
+
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 15)
-        {
-            winText.text = "You Win!";
-        }
+        totalScoreText.text = "Score: " + score.ToString();
     }
 
     public void OnClickRestart() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
     }
-
-
 }

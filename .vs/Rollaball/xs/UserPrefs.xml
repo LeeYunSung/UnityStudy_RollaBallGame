@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{465A12E5-0917-F68F-5DAA-36E0DFB33C2E}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Script/PlayerController.cs" Line="39" Column="24" IsPinned="True" />
-      <File FileName="Assets/Script/PickUpGenerator.cs" />
-      <File FileName="Assets/Script/TimePickUp.cs" />
-      <File FileName="Assets/Script/CameraController.cs" />
-      <File FileName="Assets/Script/PickUpItem/BluePickUp.cs" />
-      <File FileName="Assets/Script/Joystick.cs" Line="27" Column="51" NotebookId="1" />
-      <File FileName="Assets/Script/TimeBar.cs" Line="11" Column="21" NotebookId="1" />
+      <File FileName="Assets/Script/PlayerController.cs" Line="49" Column="16" />
+      <File FileName="Assets/Script/CameraController.cs" Line="16" Column="6" />
+      <File FileName="Assets/Script/Joystick.cs" Line="14" Column="1" />
+      <File FileName="Assets/Script/PickUpGenerator.cs" Line="31" Column="2" NotebookId="1" />
+      <File FileName="Assets/Script/PickUpItem/PickUp.cs" Line="12" Column="44" NotebookId="1" />
+      <File FileName="Assets/Script/PickUpItem/TimePickUp.cs" Line="21" Column="10" NotebookId="1" />
+      <File FileName="Assets/Script/PickUpItem/ScorePickUp.cs" Line="19" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2d980030-5d63-4391-8e2d-dd7666dfcabc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a674706a-e97d-48bf-b528-c6e60ae91980" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/yoon/Desktop/UnityTutorial/Rollaball/Assets/Script/PickUpItem/TimePickUp.cs" relfile="Assets/Script/PickUpItem/TimePickUp.cs" line="33" column="1" />
+      <Breakpoint file="/Users/yoon/Desktop/UnityTutorial/Rollaball/Assets/Script/PickUpGenerator.cs" relfile="Assets/Script/PickUpGenerator.cs" line="31" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

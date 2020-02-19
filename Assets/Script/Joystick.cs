@@ -19,13 +19,11 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     void Start() {
         joystick = GetComponent<Image>();
     }
-    public void OnBeginDrag(PointerEventData eventData)
-    {
+    public void OnBeginDrag(PointerEventData eventData){
         defaultPosition = joystick.transform.position;
         centerPt = new Vector3(defaultPosition.x, defaultPosition.y, 0.0f);
     }
-    public void OnDrag(PointerEventData eventData)
-    { 
+    public void OnDrag(PointerEventData eventData){ 
         Vector3 movement = new Vector3(eventData.position.x, eventData.position.y, 0);
         Vector3 offset = movement - centerPt;
         transform.position = centerPt + Vector3.ClampMagnitude(offset, Radius);
@@ -33,8 +31,7 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         moveHorizontal = transform.position.x - defaultPosition.x;
         moveVertical = transform.position.y - defaultPosition.y;
     }
-    public void OnEndDrag(PointerEventData eventData)
-    {
+    public void OnEndDrag(PointerEventData eventData){
         transform.position = defaultPosition;
         moveHorizontal = moveVertical = 0;
     }

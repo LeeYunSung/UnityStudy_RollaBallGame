@@ -7,25 +7,19 @@ public class TimePickUp : PickUp
 {
     public float time;
     PickUpGenerator pickUpGenerator;
-    PlayerController playerController;
+    TimeBar timeBar;
 
-    private void Start()
-    {
+    private void Start(){
         pickUpGenerator = FindObjectOfType<PickUpGenerator>();
-        playerController = FindObjectOfType<PlayerController>();
+        timeBar = FindObjectOfType<TimeBar>();
         StartCoroutine(SelfDestroy());
     }
-    IEnumerator SelfDestroy()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(3f);
-            Destroy(gameObject);
-            pickUpGenerator.Clone();
-        }
+    IEnumerator SelfDestroy(){
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+        pickUpGenerator.Clone();  
     }
-    public void Change()
-    {
-        playerController.timeBar.leftTime -= time;
+    public override void Change(){
+        timeBar.timeUpdate(time);
     }
 }

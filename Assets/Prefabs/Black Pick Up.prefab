@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 436083128958240964}
   - component: {fileID: 265892870611319300}
   - component: {fileID: 297982460098615171}
-  - component: {fileID: 114026052802425686}
+  - component: {fileID: 114466483258219166}
   m_Layer: 0
   m_Name: Black Pick Up
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114026052802425686
+--- !u!114 &114466483258219166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7288585357521860858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b1966a75fdd4f7989ea0d397cd772d, type: 3}
+  m_Script: {fileID: 11500000, guid: 261aeab420a7c4610bd7dbe38c0ec668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  time: 10
-  mMaterial: {fileID: 2100000, guid: 5f21215749db043c1b6a340c3bfc159e, type: 2}
+  mMaterial: {fileID: 0}
+  time: 5

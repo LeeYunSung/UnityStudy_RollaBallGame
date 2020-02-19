@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 825150180755112297}
   - component: {fileID: 5622379294450870876}
   - component: {fileID: 7604352292332182287}
-  - component: {fileID: 114776088855940050}
+  - component: {fileID: 114025750113188282}
   m_Layer: 0
   m_Name: R Pick Up
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114776088855940050
+--- !u!114 &114025750113188282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1058660847731467709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c927441d9bdb42bc858cca7af7469fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ec23dbbabcf64c19a49a4a2b87baa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 2
-  time: 0
-  mMaterial: {fileID: 2100000, guid: ae59a12f1d4574ee0a59c2dd44401b70, type: 2}
+  score: 3

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1888144868809397107}
   - component: {fileID: 3197582559745309493}
   - component: {fileID: 4601007863226338053}
-  - component: {fileID: 114945502095591650}
+  - component: {fileID: 114744127291627412}
   m_Layer: 0
   m_Name: G Pick Up
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114945502095591650
+--- !u!114 &114744127291627412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5645215310431237842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83434f3439ca4477aa1a4d7a013e46c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ec23dbbabcf64c19a49a4a2b87baa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 3
-  mMaterial: {fileID: 2100000, guid: 89fe6cf94bda34feab138da20ab9bf91, type: 2}
-  scoreText: {fileID: 0}
+  score: 2

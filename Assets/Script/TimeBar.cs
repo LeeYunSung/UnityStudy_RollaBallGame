@@ -3,38 +3,31 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeBar : MonoBehaviour
+public class TimeBar : GameManager
 {
-    [SerializeField]
-    private Image barImage;
-    public Text timeText;
-    public float leftTime;
-    const float MAXTIME = 60;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private Image barImage;
+    [SerializeField] private Text timeText;
 
-    PlayerController playerController;
+    private float leftTime;
+    const float MAXTIME = 10;
 
-    public void Start()
-    {
+    public void Start(){
         leftTime = MAXTIME;
         timeText.text = "Time: " + leftTime + " sec";
         StartCoroutine(Timer());
-        playerController = FindObjectOfType<PlayerController>();
-
     }
-    IEnumerator Timer()
-    {
-        while (true)
-        {
+    IEnumerator Timer(){
+        while (true){
             barUpdate(MAXTIME, leftTime);
-            if (leftTime < 0)
-            {
+            if (leftTime < 0){
                 leftTime = 0;
                 timeText.text = "Time: 0 sec";
-                playerController.isStart = false;
+                Time.timeScale = 0;
+                gameManager.SaveScore();
                 break;
             }
-            else if (leftTime >= MAXTIME)
-            {
+            else if (leftTime >= MAXTIME){
                 leftTime = MAXTIME;
             }
             timeText.text = "Time: " + (int)leftTime + " sec";
@@ -42,8 +35,11 @@ public class TimeBar : MonoBehaviour
             leftTime -= Time.deltaTime;
         }
     }
-    public void barUpdate(float maxTime, float leftTime)
-    {
+    public void barUpdate(float maxTime, float leftTime){
         barImage.fillAmount = leftTime / maxTime;
+    }
+
+    public void timeUpdate(float time){
+        leftTime -= time;
     }
 }

@@ -6,10 +6,7 @@ using UnityEngine;
 public class PickUpGenerator : MonoBehaviour
 {
     const int SIZE = 10;
-
     public GameObject[] objects;
-    public GameObject[] specialObjects;
-
     public int colorNum;
 
     void Start()
@@ -27,5 +24,4 @@ public class PickUpGenerator : MonoBehaviour
         GameObject childPickUp = Instantiate(objects[colorNum], pos, Quaternion.identity) as GameObject;
         childPickUp.transform.parent = transform;
     }
-  
 }

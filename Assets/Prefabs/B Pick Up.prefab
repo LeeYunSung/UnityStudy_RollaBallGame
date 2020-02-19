@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8688795740864528741}
   - component: {fileID: 9018791213685814181}
   - component: {fileID: 8843714573984407074}
-  - component: {fileID: 878987392019641629}
+  - component: {fileID: 114579288088636068}
   m_Layer: 0
-  m_Name: B Pick Up 1
+  m_Name: B Pick Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &878987392019641629
+--- !u!114 &114579288088636068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1999540232764305755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b84655b6c764474c921cf6d8951a260, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ec23dbbabcf64c19a49a4a2b87baa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 4
-  mMaterial: {fileID: 2100000, guid: 255195d8137a2494cb092cbd248d3801, type: 2}
-  scoreText: {fileID: 0}
+  score: 1

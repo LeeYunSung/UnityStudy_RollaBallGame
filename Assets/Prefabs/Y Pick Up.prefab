@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1934261891334026929}
   - component: {fileID: 4588068818841118015}
   - component: {fileID: 2154860977691957271}
-  - component: {fileID: 114000681466678236}
+  - component: {fileID: 114817829766456594}
   m_Layer: 0
   m_Name: Y Pick Up
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114000681466678236
+--- !u!114 &114817829766456594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8514307373115497791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800865026abd943028f25629044aaf19, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ec23dbbabcf64c19a49a4a2b87baa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 1
-  mMaterial: {fileID: 2100000, guid: 6c992543d799d43ff939ec2e5f9e3b56, type: 2}
-  scoreText: {fileID: 0}
+  score: 4

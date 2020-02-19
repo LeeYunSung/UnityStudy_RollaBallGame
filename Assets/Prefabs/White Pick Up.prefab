@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6505113684638195158}
   - component: {fileID: 6916171189088169750}
   - component: {fileID: 6370671880151827089}
-  - component: {fileID: 114157690814569300}
+  - component: {fileID: 114779217188303622}
   m_Layer: 0
   m_Name: White Pick Up
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114157690814569300
+--- !u!114 &114779217188303622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4138184504408321512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3d3cbbdec1b4ce88d3ff289029fdb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 261aeab420a7c4610bd7dbe38c0ec668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  time: -10
-  mMaterial: {fileID: 2100000, guid: 925afd6b500f94c879c94f5eca37fccf, type: 2}
+  mMaterial: {fileID: 0}
+  time: -5

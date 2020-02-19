@@ -5,14 +5,14 @@ using UnityEngine;
 public class ScorePickUp : PickUp
 {
     public int score;
-    PlayerController playerController;
+    GameManager gameManager;
 
     private void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        gameManager = FindObjectOfType<GameManager>();
     }
-    public void Change()
+    public override void Change()
     {
-        playerController.score += score;
+        gameManager.SetScore(score);
     }
 }

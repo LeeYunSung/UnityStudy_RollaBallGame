@@ -20,6 +20,6 @@ public class TimePickUp : PickUp
         pickUpGenerator.Clone();  
     }
     public override void Change(){
-        timeBar.timeUpdate(time);
+        timeBar.TimeUpdate(time);
     }
 }

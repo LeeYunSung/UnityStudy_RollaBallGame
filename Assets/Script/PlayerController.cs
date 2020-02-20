@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : GameManager
+public class PlayerController : MonoBehaviour
 {
     public Joystick joystick;
     private Rigidbody rb;

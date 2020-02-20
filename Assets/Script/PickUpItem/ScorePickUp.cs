@@ -5,14 +5,12 @@ using UnityEngine;
 public class ScorePickUp : PickUp
 {
     public int score;
-    GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
-    private void Start()
-    {
+    private void Start(){
         gameManager = FindObjectOfType<GameManager>();
     }
-    public override void Change()
-    {
+    public override void Change(){
         gameManager.SetScore(score);
     }
 }

@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour 
 {
-    public Material mMaterial;
-
-    protected void Update()
-    {
+    protected void Update(){
         transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
     }
     public virtual void Change() { }

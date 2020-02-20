@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeBar : GameManager
+public class TimeBar : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Image barImage;
@@ -19,7 +19,7 @@ public class TimeBar : GameManager
     }
     IEnumerator Timer(){
         while (true){
-            barUpdate(MAXTIME, leftTime);
+            BarUpdate(MAXTIME, leftTime);
             if (leftTime < 0){
                 leftTime = 0;
                 timeText.text = "Time: 0 sec";
@@ -35,11 +35,11 @@ public class TimeBar : GameManager
             leftTime -= Time.deltaTime;
         }
     }
-    public void barUpdate(float maxTime, float leftTime){
+    public void BarUpdate(float maxTime, float leftTime){
         barImage.fillAmount = leftTime / maxTime;
     }
 
-    public void timeUpdate(float time){
+    public void TimeUpdate(float time){
         leftTime -= time;
     }
 }

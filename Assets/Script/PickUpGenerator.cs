@@ -9,10 +9,8 @@ public class PickUpGenerator : MonoBehaviour
     public GameObject[] objects;
     public int colorNum;
 
-    void Start()
-    {
-        for (int i = 0; i < SIZE; i++)
-        {
+    public void Start(){
+        for (int i = 0; i < SIZE; i++){
             Clone();
         }
     }
@@ -24,4 +22,5 @@ public class PickUpGenerator : MonoBehaviour
         GameObject childPickUp = Instantiate(objects[colorNum], pos, Quaternion.identity) as GameObject;
         childPickUp.transform.parent = transform;
     }
+
 }

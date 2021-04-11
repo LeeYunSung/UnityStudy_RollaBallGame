@@ -12,5 +12,11 @@
 6) Random 위치에 Random 아이템 생성
 7) 아이템 획득 시 새로운 아이템 생성
 
+### - Learned
+1) 좌표와 이동거리를 통한 Joystick과 Player연결
+2) Clamp함수를 통한 Joystick 이동 범위 제한
+3) Random.insideUnitCircle 함수를 통한 복제 영역 제한
+4) Timebar image에 fillAmount함수 적용
+
 ### - Screenshot
 ![그림1](https://user-images.githubusercontent.com/32055099/114312602-24046200-9b2e-11eb-8df3-360644c42f93.png)
